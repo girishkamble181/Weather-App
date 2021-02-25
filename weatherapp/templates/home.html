@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+<head>
+	
+	<title>Weather Project</title>
+	<style type="text/css">
+		*{font-family: Arial; font-size:40px}		
+	</style>
+	
+</head>
+
+<body id="bg" style="background-image: url('{%static "images/weather.jpg"%}'); background-size:1800px 900px">
+	<center>
+	<br><br>
+	<h1 style="color:white;font-size:70px; font-family:Trebuchet MS;">Weather App by DE</h1>
+	<form method="POST">
+	{% csrf_token %}
+	<br>	
+	<input type="text" name="city" placeholder="Enter City Name" required>	
+	<button type="submit"> <img style="width:30px;height:auto;" src="{% static 'images/search.jpeg' %}" /></button>
+	</form>
+	<h2 style="font-family:Trebuchet MS;">{{msg}} <img src={{icon}}></h2>
+	</center>
+</body>
+</html>
